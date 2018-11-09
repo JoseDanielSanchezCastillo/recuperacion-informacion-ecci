@@ -21,7 +21,64 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('structure/header');
-		$this->load->view('welcome_message');
+		$this->load->view('menu');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function que_es_clustering()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('que_es');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function tipos_de_clustering()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('tipos');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function k_means()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('k_means');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function hac()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('hac');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function cod_k()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('cod_k');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function cod_hac()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('cod_hac');
+		$this->load->view('footer');
+		//$this->load->view('structure/footer');
+	}
+	public function acerca()
+	{
+		//$this->load->view('structure/header');
+		$this->load->view('menu');
+		$this->load->view('acerca');
+		$this->load->view('footer');
 		//$this->load->view('structure/footer');
 	}
 }
