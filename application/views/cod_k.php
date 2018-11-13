@@ -1,1 +1,0 @@
-	<h1>Código K-Means</h1>
