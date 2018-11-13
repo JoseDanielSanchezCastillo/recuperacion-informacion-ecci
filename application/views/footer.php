@@ -14,13 +14,13 @@
         <div class="col-md-6">
           <ul class="nav nav-footer justify-content-end">
             <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Sitio del curso</a>
+              <a href="http://www.kramirez.net/ci-2414/" class="nav-link" target="_blank">Sitio del curso</a>
             </li>
             <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">Mapa del sitio</a>
+              <a href="<?php echo base_url().'clustering/mapa_de_sitio'?>" class="nav-link" target="_blank">Mapa del sitio</a>
             </li>
             <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Acerca de nosotros</a>
+              <a href="<?php echo base_url().'clustering/acerca_de_nosotros'?>" class="nav-link" target="_blank">Acerca de nosotros</a>
             </li>
           </ul>
         </div>
@@ -36,6 +36,6 @@
         <script src="<?php echo base_url().'public/vendor/nouislider/js/nouislider.min.js'?>"></script>
         <script src="<?php echo base_url().'public/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js'?>"></script>
         <script src="<?php echo base_url().'public/js/argon.js?v=1.0.1'?>"></script>
-        <script src="<?php echo base_url().'public/alchemy/alchemy.min.js'?>"></script>
+
     </body>
 </html>

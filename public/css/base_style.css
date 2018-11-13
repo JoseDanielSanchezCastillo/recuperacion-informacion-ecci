@@ -8,4 +8,15 @@
 
 #alchemy{
 	width: 100% !important;
+	height: 440px !important;
+	margin-bottom: 50px; 
+	margin-top: 50px;
+	margin-left: 5px;
+}
+
+@media (max-width: 400px){
+	#alchemy{
+		width: 100% !important;
+		height: 320px !important;
+	}
 }

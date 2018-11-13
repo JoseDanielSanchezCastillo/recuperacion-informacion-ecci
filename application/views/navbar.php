@@ -36,9 +36,9 @@
                             K-Means
                         </a>
                         <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbar-default_dropdown_1">
-                            <a class="dropdown-item" href="#">Definición</a>
-                            <a class="dropdown-item" href="#">Ejemplo</a>
-                            <a class="dropdown-item" href="#">Codigo fuente</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/que_es_k_means'?>">Definición</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/ejemplo_k_means'?>">Ejemplo</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/codigo_fuente_k_means'?>">Codigo fuente</a>
                         </div>
                     </li>
 
@@ -54,13 +54,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link nav-link-icon" href="#">
+                        <a class="nav-link nav-link-icon" href="<?php echo base_url().'clustering/referencias'?>">
                             Referencias
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link nav-link-icon" href="#">
+                        <a class="nav-link nav-link-icon" href="<?php echo base_url().'clustering/acerca_de_nosotros'?>">
                             Acerca de nosotros
                         </a>
                     </li>

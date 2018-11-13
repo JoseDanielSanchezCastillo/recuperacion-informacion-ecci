@@ -36,4 +36,61 @@ class Clustering extends CI_Controller {
         $this->load->view('tipos_clustering', $data);
         $this->load->view('footer');
     }
+
+    //Acerca de nosotros
+    public function que_es_k_means()
+    {
+        $data['title'] = "Definición de K-Means";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('que_es_k_means', $data);
+        $this->load->view('footer');
+    }
+
+    // Ejemplo de K-Means
+    public function ejemplo_k_means()
+    {
+        $data['title'] = "Ejemplo de K-Means";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('ejemplo_k_means', $data);
+        $this->load->view('footer');
+    }
+
+    // Codigo Fuente de K-Means
+    public function codigo_fuente_k_means()
+    {
+        $data['title'] = "Codigo Fuente de K-Means";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('codigo_fuente_k_means', $data);
+        $this->load->view('footer');
+    }
+
+
+    //Referencias
+    public function referencias()
+    {
+        $data['title'] = "Referencias";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('referencias', $data);
+        $this->load->view('footer');
+    }
+
+    //Acerca de nosotros
+    public function acerca_de_nosotros()
+    {
+        $data['title'] = "Acerca de nosotros";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('acerca_de_nosotros', $data);
+        $this->load->view('footer');
+    }
+
 }
