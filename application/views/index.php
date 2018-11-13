@@ -10,28 +10,3 @@
     		Maecenas sodales convallis tortor id consectetur. Proin metus risus, condimentum tempor mi vitae, feugiat congue diam. Integer nec lorem id nulla hendrerit scelerisque. In ac orci posuere, blandit velit et, maximus mi. Ut mattis mollis justo at tincidunt. Morbi lacinia vehicula felis, ac dapibus lacus aliquet nec. Vestibulum blandit leo consequat sapien sagittis, sit amet volutpat ex blandit. Phasellus efficitur aliquet justo id tristique. Aenean fermentum gravida orci vel tincidunt. Morbi mollis tellus ut ligula porta dignissim. Sed consectetur finibus sem, vel pulvinar urna suscipit vel. Donec lorem urna, ultrices quis interdum ut, eleifend ut velit. Donec a vestibulum purus. Quisque cursus tortor vel augue tristique, ac aliquet risus hendrerit. Suspendisse porttitor, lorem ac porta tristique, quam magna fringilla neque, dignissim auctor leo est eget massa. Curabitur molestie viverra mattis.
     	</p>
     </div>
-
-	<div class="alchemy" id="alchemy"></div>
-
-	<script type="text/javascript">
-      var config = {
-        dataSource: "<?php echo base_url().'public/alchemy/ejemplo.json'?>", 
-        cluster: true, 
-        clusterColours: ["#DD79FF", "#00FF30", "#5168FF", "#f83f00", "#ff8d8f"],
-        forceLocked: false,
-        nodeCaption: "title", 
-        edgeCaption: "relatedness",
-        nodeCaptionsOnByDefault: true,
-        nodeTypes: {"type":["philosopher"]},
-        directedEdges:true,
-        nodeStyle: {
-            "philosopher": {
-                "radius": 18
-            }
-        }, 
-        initialScale: 0.7, 
-        initialTranslate: [260,40]
-      };
-
-        alchemy = new Alchemy(config);
-    </script>
