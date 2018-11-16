@@ -47,9 +47,9 @@
                             HAC
                         </a>
                         <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbar-default_dropdown_1">
-                            <a class="dropdown-item" href="#">Definición</a>
-                            <a class="dropdown-item" href="#">Ejemplo</a>
-                            <a class="dropdown-item" href="#">Codigo fuente</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/que_es_hac'?>">Definición</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/ejemplo_hac'?>">Ejemplo</a>
+                            <a class="dropdown-item" href="<?php echo base_url().'clustering/codigo_fuente_hac'?>">Codigo fuente</a>
                         </div>
                     </li>
 

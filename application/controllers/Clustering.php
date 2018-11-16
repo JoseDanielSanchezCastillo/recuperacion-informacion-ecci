@@ -71,6 +71,39 @@ class Clustering extends CI_Controller {
     }
 
 
+    // Codigo Fuente de K-Means
+    public function que_es_hac()
+    {
+        $data['title'] = "Definición de HAC";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('que_es_hac', $data);
+        $this->load->view('footer');
+    }
+
+    // Codigo Fuente de K-Means
+    public function ejemplo_hac()
+    {
+        $data['title'] = "Ejemplo de HAC";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view("ejemplo_hac", $data);
+        $this->load->view('footer');
+    }
+
+    // Codigo Fuente de K-Means
+    public function codigo_fuente_hac()
+    {
+        $data['title'] = "Codigo Fuente de HAC";
+        
+        $this->load->view('header', $data);
+        $this->load->view('navbar', $data);
+        $this->load->view('codigo_fuente_hac', $data);
+        $this->load->view('footer');
+    }
+
     //Referencias
     public function referencias()
     {
