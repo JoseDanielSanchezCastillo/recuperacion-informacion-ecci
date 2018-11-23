@@ -1,11 +1,101 @@
     <div id="texto-principal" >
+        <h2 class="display-3" >K-Means descripción gráfica</h2>
+        <img src="<?php echo base_url('images/g_k_means.png'); ?>" />
+      <br><hr>
     	<h2 class="display-3" >Ejemplo de K-Means</h2>
-    	<br>
-    	<p class="text-muted mb-0">
-    		Praesent sollicitudin, lectus vel finibus egestas, neque tellus ornare nunc, lobortis efficitur quam massa imperdiet lectus. Proin condimentum ex orci, at ultrices lacus posuere quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in lorem non est aliquam dapibus. Duis suscipit est ac arcu accumsan, at dignissim massa convallis. Sed ut lectus id mauris molestie venenatis pretium sit amet ipsum. Duis condimentum ligula id erat hendrerit, sed suscipit mauris pharetra. Ut eu tellus congue, pellentesque dolor ac, pharetra ligula. Nam scelerisque, erat a consequat consequat, justo lacus molestie dui, vel auctor odio enim sed dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et dui ut nisl feugiat tristique. Maecenas vulputate odio ut est eleifend auctor. Fusce in nisl nunc. Suspendisse potenti. Vestibulum molestie ac turpis nec ullamcorper. Cras lobortis sem a egestas viverra.
-    	</p>
-    	<br>
-    	<p class="text-muted mb-0">
-    		Maecenas sodales convallis tortor id consectetur. Proin metus risus, condimentum tempor mi vitae, feugiat congue diam. Integer nec lorem id nulla hendrerit scelerisque. In ac orci posuere, blandit velit et, maximus mi. Ut mattis mollis justo at tincidunt. Morbi lacinia vehicula felis, ac dapibus lacus aliquet nec. Vestibulum blandit leo consequat sapien sagittis, sit amet volutpat ex blandit. Phasellus efficitur aliquet justo id tristique. Aenean fermentum gravida orci vel tincidunt. Morbi mollis tellus ut ligula porta dignissim. Sed consectetur finibus sem, vel pulvinar urna suscipit vel. Donec lorem urna, ultrices quis interdum ut, eleifend ut velit. Donec a vestibulum purus. Quisque cursus tortor vel augue tristique, ac aliquet risus hendrerit. Suspendisse porttitor, lorem ac porta tristique, quam magna fringilla neque, dignissim auctor leo est eget massa. Curabitur molestie viverra mattis.
-    	</p>
+        <br>
+        Función de similitud:
+        <h4>Hamming</h4>
+        <br>
+        Colección de palabras: 
+        <h4>casa, zopilote , zapato, caseta, carretera, carril, casetilla</h4><br>
+        <p> Aplico 1 iteración con casa, zopilote, carro y zapato como representantes.</p>
+        <hr>
+        <table>
+          <tr>
+            <th></th>
+            <th>casa</th>
+            <th>zopilote</th>
+            <th>carro</th>
+            <th>zapato</th>
+          </tr>
+          <tr>
+            <td>casetilla </td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>carril </td>
+            <td>2</td>
+            <td>0</td>
+            <td>4</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>caseta </td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>carretera </td>
+            <td>2</td>
+            <td>0</td>
+            <td>4</td>
+            <td>1</td>
+          </tr>
+        </table>
+        <p></p>
+        <p>1 Culster: casa, casetilla, casita. Representante:caseta<br>
+        2 Culster: zopilote. Representante: zopilote<br>
+        3 Culster: carro, carril, carretera. Representante: carro<br>
+        4 Culster: zapato. Representante:zapato</p>
+        <p> Como al menos un representante cambió. Aplico 2 iteración con nuevos representantes.</p>
+        <hr>
+    	  <table>
+          <tr>
+            <th></th>
+            <th>caseta</th>
+            <th>zopilote</th>
+            <th>carro</th>
+            <th>zapato</th>
+          </tr>
+          <tr>
+            <td>casetilla </td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>carril </td>
+            <td>2</td>
+            <td>0</td>
+            <td>4</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>casa </td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>carretera </td>
+            <td>5</td>
+            <td>0</td>
+            <td>4</td>
+            <td>1</td>
+          </tr>
+        </table>
+        <p></p>
+        <p>1 Culster: casa, casetilla, casita. Representante:caseta<br>
+        2 Culster: zopilote. Representante: zopilote<br>
+        3 Culster: carro, carril, carretera. Representante: carro<br>
+        4 Culster: zapato. Representante:zapato</p>
+        <p> Como al menos ningún representate cambió, finalizo el algoritmo.</p>
     </div>
