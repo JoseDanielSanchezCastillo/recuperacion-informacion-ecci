@@ -1,194 +1,195 @@
     <div id="texto-principal" >
     	<h2 class="display-3" >Codigo fuente HAC</h2>
     	<br>
-        <pre>
+
+          <figcaption>Código fuente</figcaption>
+          <figcaption>Nota: Para correr crear carpeta de /texto y colocar documentos .txt para categorizar. </figcaption>
+
         <code>
-            # -*- coding: utf-8 -*-
+            <pre>
+                <p>
+# -*- coding: utf-8 -*-<br><br>
 
-            from Levenshtein import * <br>
-            from warnings import warn <br>
-            import sys<br><br>
+from Levenshtein import * <br>
+from warnings import warn <br>
+import sys<br>
 
-            # Clase que maneja los nodos dentro de la matriz<br>
-            class NodoTermino:<br><br>
+# Clase que maneja los nodos dentro de la matriz<br>
+class NodoTermino:<br><br>
 
-                # Valor del termino<br>
-                termino = None <br>
-                # Hijo izquierdo del árbol<br>
-                nodoHijoIzquierdo = None<br>
-                # Hijo derecho del arbol <br>
-                nodoHijoDerecho = None<br><br>
+    &#09;# Valor del termino<br>
+    &#09;termino = None <br>
+    &#09;# Hijo izquierdo del árbol<br>
+    &#09;nodoHijoIzquierdo = None<br>
+    &#09;# Hijo derecho del arbol <br>
+    &#09;nodoHijoDerecho = None<br>
 
-                # Constructor de la clase<br>
-                def __init__(self):<br>
-                    &nbsp&nbsp&nbsp self.termino = None<br>
-                    &nbsp&nbsp&nbsp self.nodoHijoIzquierdo = None<br>
-                    &nbsp&nbsp&nbsp self.nodoHijoDerecho = None<br><br>
+    &#09;# Constructor de la clase<br>
+    &#09;def __init__(self):<br>
+    &#09;&#09;    self.termino = None<br>
+    &#09;&#09;    self.nodoHijoIzquierdo = None<br>
+    &#09;&#09;    self.nodoHijoDerecho = None<br><br>
 
-                # Obtener el termino de la clase<br>
-                def obtenerTermino(self):<br>
-                    &nbsp&nbsp&nbsp return self.termino<br><br>
+    &#09;# Obtener el termino de la clase<br>
+    &#09;def obtenerTermino(self):<br>
+        &#09;&#09;return self.termino<br><br>
 
+    &#09;def obtenerHijoIzquierdo(self):<br>
+       &#09; &#09;return self.nodoHijoIzquierdo<br><br>
 
-                def obtenerHijoIzquierdo(self):<br>
-                    &nbsp&nbsp&nbsp return self.nodoHijoIzquierdo<br>
+    &#09;def obtenerHijoDerecho(self):<br>
+        &#09;&#09;return self.nodoHijoDerecho<br><br>
 
-                def obtenerHijoDerecho(self):<br>
-                    &nbsp&nbsp&nbsp return self.nodoHijoDerecho<br>
+    &#09;def asignarTermino(self, termino):<br>
+        &#09;&#09;self.termino = termino<br><br>
 
-                def asignarTermino(self, termino):<br>
-                    &nbsp&nbsp&nbsp self.termino = termino<br>
+    &#09;def asignarNodoHijoIzquierdo(self, nodoHijoIzquierdo):<br>
+       &#09;&#09; self.nodoHijoIzquierdo = nodoHijoIzquierdo<br>
 
-                def asignarNodoHijoIzquierdo(self, nodoHijoIzquierdo):<br>
-                    &nbsp&nbsp&nbsp self.nodoHijoIzquierdo = nodoHijoIzquierdo<br>
+    &#09;def asignarNodoHijoDerecho(self, nodoHijoDerecho):<br>
+        &#09;&#09;self.nodoHijoDerecho = nodoHijoDerecho<br><br>
 
-                def asignarNodoHijoDerecho(self, nodoHijoDerecho):<br>
-                    &nbsp&nbsp&nbsp self.nodoHijoDerecho = nodoHijoDerecho<br><br>
+# Clase permite estructurar el arbol<br>
+class arbol(object):<br>
+   &#09;def __init__(self, valorNodo, hijoNodo = []):<br>
+        &#09;&#09;self.valorNodo = valorNodo<br>
+        &#09;&#09;self.hijoNodo = hijoNodo<br><br>
 
-            # Clase permite estructurar el arbol<br>
-            class arbol(object):<br>
-                def __init__(self, valorNodo, hijoNodo = []):<br>
-                    self.valorNodo = valorNodo<br>
-                    self.hijoNodo = hijoNodo<br>
+    &#09;def __str__(self, level=0):<br>
+        &#09;&#09;ret = "\t"*level+repr(self.valorNodo)+"\n"<br>
+        &#09;&#09;for hijo in self.hijoNodo:<br>
+            &#09;&#09;&#09;ret += hijo.__str__(level+1)<br>
+        &#09;&#09;return ret<br><br>
 
-                def __str__(self, level=0):<br>
-                    ret = "\t"*level+repr(self.valorNodo)+"\n"<br>
-                    for hijo in self.hijoNodo:<br>
-                        ret += hijo.__str__(level+1)<br>
-                    return ret<br>
-
-                def __repr__(self):<br>
-                    return 'Arbol'<br>
-
-
-            # Permite construir el arbol<br>
-            def construir_arbol(nodo):<br>
-
-                if(nodo != None):<br>
-                    if(nodo.obtenerHijoIzquierdo() == None and nodo.obtenerHijoDerecho() == None):<br>
-                        return arbol(nodo.obtenerTermino())<br>
-                    else:<br>
-                        root = arbol(nodo.obtenerTermino())<br>
-                        root.hijoNodo = [] <br>
-                        root.hijoNodo.append(construir_arbol(nodo.obtenerHijoIzquierdo()))<br>
-                        root.hijoNodo.append(construir_arbol(nodo.obtenerHijoDerecho()))<br>
-                        return root<br>
-                else:<br>
-                    return None<br><br>
+    &#09;def __repr__(self):<br>
+        &#09;&#09;return 'Arbol'<br><br>
 
 
+# Permite construir el arbol<br>
+def construir_arbol(nodo):<br><br>
 
-            # Imprimir matriz<br>
-            def imprimir_matriz(cantidadterminos, matrizDistancia):<br>
-                
-                # Imprimir matriz<br>
-                for i in range(cantidadterminos):<br>
+    &#09;if(nodo != None):<br>
+        &#09;&#09;if(nodo.obtenerHijoIzquierdo() == None and nodo.obtenerHijoDerecho() == None):<br>
+           &#09;&#09;&#09; return arbol(nodo.obtenerTermino())<br>
+        &#09;&#09;else:<br>
+            &#09;&#09;&#09;root = arbol(nodo.obtenerTermino())<br>
+            &#09;&#09;&#09;root.hijoNodo = [] <br>
+            &#09;&#09;&#09;root.hijoNodo.append(construir_arbol(nodo.obtenerHijoIzquierdo()))<br>
+            &#09;&#09;&#09;root.hijoNodo.append(construir_arbol(nodo.obtenerHijoDerecho()))<br>
+            &#09;&#09;&#09;return root<br>
+    &#09;else:<br>
+        &#09;&#09;return None<br><br>
 
-                    hilera = ""<br>
+# Imprimir matriz<br>
+def imprimir_matriz(cantidadterminos, matrizDistancia):<br>
+    
+    &#09;# Imprimir matriz<br>
+    &#09;for i in range(cantidadterminos):<br>
 
-                    for j in range(cantidadterminos):<br>
-                        hilera = hilera + "  " +str(matrizDistancia[i][j][2])<br><br>
+        &#09;&#09;hilera = ""<br>
 
-                    print (hilera + "\n")<br><br>
+        &#09;&#09;for j in range(cantidadterminos):<br>
+            &#09;&#09;&#09;hilera = hilera + "  " +str(matrizDistancia[i][j][2])<br>
 
-
-            def lectura_archivo(documento):<br>
-                terminos = []<br>
-                f = open("terminos.txt")<br>
-                linea = f.readline()<br>
-                while linea != "":<br>
-                  linea = f.readline()<br>
-                  if(len(linea) != 0):<br>
-                    terminos.append(linea.strip('\n'))<br>
-
-                return terminos<br>
-
-
-            documento = sys.argv[1]<br>
-            terminos = lectura_archivo(documento)<br>
-            cantidadterminos = len(terminos) <br>
-            terminosNodo = []<br>
-            matrizDistancia = []<br><br>
+        &#09;&#09;print (hilera + "\n")<br><br>
 
 
-            # Se generan los nodos del arbol<br>
-            for i in range(len(terminos)):<br>
-                nodo = NodoTermino()<br>
-                nodo.asignarTermino(terminos[i])<br>
-                terminosNodo.append(nodo)<br>
+def lectura_archivo(documento):<br>
+    &#09;terminos = []<br>
+    &#09;f = open("terminos.txt")<br>
+    &#09;linea = f.readline()<br>
+    &#09;while linea != "":<br>
+      &#09;&#09;linea = f.readline()<br>
+      &#09;&#09;if(len(linea) != 0):<br>
+        &#09;&#09;&#09;terminos.append(linea.strip('\n'))<br>
 
-            # Se calcula la distancia de Levenshtein entre los terminos<br>
-            for i in range(len(terminosNodo)):<br><br>
-                
-                matriz = []<br><br>
-
-                for j in range(len(terminosNodo)):<br>
-                    matriz.append([terminosNodo[i],terminosNodo[j],<br>
-                        distance(terminosNodo[i].obtenerTermino(), terminosNodo[j].obtenerTermino())])<br><br>
-
-                matrizDistancia.append(matriz)<br><br>
+    &#09;return terminos<br><br>
 
 
-            print ("\n ----------- Iteración -------------\n")<br>
-            imprimir_matriz(cantidadterminos, matrizDistancia)<br>
-            print ("\n")<br><br>
-
-            while cantidadterminos != 1:<br><br>
-
-                filaMenor = 0<br>
-                columnaMenor = 1<br>
-                menorSimilaridad = -1<br><br>
-
-                # Determina la posición de los dos términos más cercanos<br>
-                for i in range(cantidadterminos):<br>
-                    for j in range(cantidadterminos):<br>
-                        if((menorSimilaridad == -1 or (matrizDistancia[i][j][2] < menorSimilaridad)) and (i != j)):<br>
-                            filaMenor = i<br>
-                            columnaMenor = j<br>
-                            menorSimilaridad = matrizDistancia[i][j][2]<br><br>
-
-                # Crea un nuevo nodo con los valores de los dos términos más cercanos<br>
-                nodo = NodoTermino()<br>
-                nodo.asignarTermino("["+str(menorSimilaridad)+"]")<br>
-                nodo.asignarNodoHijoIzquierdo(matrizDistancia[filaMenor][columnaMenor][0])<br>
-                nodo.asignarNodoHijoDerecho(matrizDistancia[filaMenor][columnaMenor][1])<br><br>
+documento = sys.argv[1]<br>
+terminos = lectura_archivo(documento)<br>
+cantidadterminos = len(terminos) <br>
+terminosNodo = []<br>
+matrizDistancia = []<br><br>
 
 
-                for i in range(cantidadterminos):<br>
-                    if((matrizDistancia[filaMenor][i][2] <= matrizDistancia[i][columnaMenor][2]) and (filaMenor != i)):<br>
-                            matrizDistancia[filaMenor][i][2] = matrizDistancia[i][columnaMenor][2]<br><br>
+# Se generan los nodos del arbol<br>
+for i in range(len(terminos)):<br>
+    &#09;nodo = NodoTermino()<br>
+    &#09;nodo.asignarTermino(terminos[i])<br>
+    &#09;terminosNodo.append(nodo)<br><br>
 
-                for i in range(cantidadterminos):<br>
-                    matrizDistancia[filaMenor][i][0] = nodo<br>
-                    matrizDistancia[i][filaMenor][1] = nodo<br><br>
+# Se calcula la distancia de Levenshtein entre los terminos<br>
+for i in range(len(terminosNodo)):<br><br>
+    
+    &#09;matriz = []<br><br>
 
-                # Elimina término de las columnas<br>
-                for i in range(cantidadterminos):<br>
-                    matrizDistancia[i].pop(columnaMenor)<br><br>
+    &#09;for j in range(len(terminosNodo)):<br>
+        &#09;&#09;matriz.append([terminosNodo[i],terminosNodo[j],<br>
+            &#09;&#09;&#09;distance(terminosNodo[i].obtenerTermino(), terminosNodo[j].obtenerTermino())])<br><br>
 
-                #Elimina el término por fila<br>
-                matrizDistancia.pop(columnaMenor)<br><br>
-
-                # Disminuye el total de terminos<br>
-                cantidadterminos = cantidadterminos - 1<br><br>
-
-                # Imprime la matriz resultante de la iteración<br>
-                print ("----------- Iteración -------------\n")<br>
-                imprimir_matriz(cantidadterminos, matrizDistancia)<br>
-                print ("\n")<br><br>
+   &#09; matrizDistancia.append(matriz)<br><br>
 
 
+print ("\n ----------- Iteración -------------\n")<br>
+imprimir_matriz(cantidadterminos, matrizDistancia)<br>
+print ("\n")<br><br>
 
-            # Se asigna la raiz del arbol<br>
-            nodo = NodoTermino()<br>
-            nodo.asignarTermino("raiz")<br>
-            nodo.asignarNodoHijoIzquierdo(matrizDistancia[0][0][0])<br><br>
+while cantidadterminos != 1:<br><br>
 
-            # Construye el arbol para imprimir<br>
-            root = arbol('raiz')<br>
-            root = construir_arbol(matrizDistancia[0][0][1])<br>
-            print ("------------------- Árbol ---------------------\n")<br>
-            print (root)<br><br>
-        </code>
+    &#09;filaMenor = 0<br>
+    &#09;columnaMenor = 1<br>
+    &#09;menorSimilaridad = -1<br><br>
+
+    &#09;# Determina la posición de los dos términos más cercanos<br>
+    &#09;for i in range(cantidadterminos):<br>
+        &#09;&#09;for j in range(cantidadterminos):<br>
+            &#09;&#09;&#09;if((menorSimilaridad == -1 or (matrizDistancia[i][j][2] < menorSimilaridad)) and (i != j)):<br>
+                &#09;&#09;&#09;&#09;filaMenor = i<br>
+                &#09;&#09;&#09;&#09;columnaMenor = j<br>
+                &#09;&#09;&#09;&#09;menorSimilaridad = matrizDistancia[i][j][2]<br><br>
+
+    &#09;# Crea un nuevo nodo con los valores de los dos términos más cercanos<br>
+    &#09;nodo = NodoTermino()<br>
+    &#09;nodo.asignarTermino("["+str(menorSimilaridad)+"]")<br>
+    &#09;nodo.asignarNodoHijoIzquierdo(matrizDistancia[filaMenor][columnaMenor][0])<br>
+    &#09;nodo.asignarNodoHijoDerecho(matrizDistancia[filaMenor][columnaMenor][1])<br><br>
+
+
+    &#09;for i in range(cantidadterminos):<br>
+        &#09;&#09;if((matrizDistancia[filaMenor][i][2] <= matrizDistancia[i][columnaMenor][2]) and (filaMenor != i)):<br><br>
+                &#09;&#09;&#09;&#09;matrizDistancia[filaMenor][i][2] = matrizDistancia[i][columnaMenor][2]<br><br>
+
+    &#09;for i in range(cantidadterminos):<br>
+        &#09;&#09;matrizDistancia[filaMenor][i][0] = nodo<br>
+        &#09;&#09;matrizDistancia[i][filaMenor][1] = nodo<br><br>
+
+    &#09;# Elimina término de las columnas<br>
+    &#09;for i in range(cantidadterminos):<br>
+        &#09;&#09;matrizDistancia[i].pop(columnaMenor)<br><br>
+
+    &#09;#Elimina el término por fila<br>
+    &#09;matrizDistancia.pop(columnaMenor)<br><br>
+
+    &#09;# Disminuye el total de terminos<br>
+    &#09;cantidadterminos = cantidadterminos - 1<br><br>
+
+    &#09;# Imprime la matriz resultante de la iteración<br>
+    &#09;print ("----------- Iteración -------------\n")<br>
+    &#09;imprimir_matriz(cantidadterminos, matrizDistancia)<br>
+    &#09;print ("\n")<br><br>
+
+# Se asigna la raiz del arbol<br>
+nodo = NodoTermino()<br>
+nodo.asignarTermino("raiz")<br>
+nodo.asignarNodoHijoIzquierdo(matrizDistancia[0][0][0])<br><br>
+
+# Construye el arbol para imprimir<br>
+root = arbol('raiz')<br>
+root = construir_arbol(matrizDistancia[0][0][1])<br>
+print ("------------------- Árbol ---------------------\n")<br>
+print (root)<br><br>
+</p>
         </pre>
+        </code>
     </div>
